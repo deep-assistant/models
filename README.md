@@ -1,2 +1,3 @@
 # models
-GitHub Pages AI models page
+
+AI models database and website based on [Links Notation](https://github.com/link-foundation/links-notation)
