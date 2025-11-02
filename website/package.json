@@ -12,6 +12,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "links-notation": "^0.11.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
