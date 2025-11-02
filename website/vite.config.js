@@ -41,4 +41,7 @@ function copyLinoFiles() {
 export default defineConfig({
   plugins: [react(), copyLinoFiles()],
   base: '/models/',
+  build: {
+    minify: false,
+  },
 })
