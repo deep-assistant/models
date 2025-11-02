@@ -179,8 +179,8 @@ describe('parseLinoFile', () => {
   it('should skip empty lines', () => {
     const content = `model 'Test Model'
 
-released at
-  2024-10-22`
+  released at
+    2024-10-22`
     const result = parseLinoFile(content)
     expect(result.name).toBe('Test Model')
     expect(result.releaseDate).toBe('2024-10-22')
