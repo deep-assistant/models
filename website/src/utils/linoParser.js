@@ -207,7 +207,7 @@ export async function loadAllModels() {
   const models = [];
 
   // Import all .lino files from the providers directory
-  const modelFiles = import.meta.glob('/providers/**/*.lino', {
+  const modelFiles = import.meta.glob('/public/providers/**/*.lino', {
     query: '?raw',
     import: 'default'
   });
