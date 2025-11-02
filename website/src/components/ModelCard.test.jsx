@@ -35,7 +35,7 @@ describe('ModelCard', () => {
   it('should render release information', () => {
     render(<ModelCard model={mockModel} />)
     expect(screen.getByText('Released:')).toBeDefined()
-    expect(screen.getByText('2024-10-22')).toBeDefined()
+    expect(screen.getAllByText('2024-10-22')[0]).toBeDefined()
     expect(screen.getByText('Last Updated:')).toBeDefined()
     expect(screen.getByText('Knowledge Cutoff:')).toBeDefined()
     expect(screen.getByText('2024-04-30')).toBeDefined()
@@ -69,9 +69,11 @@ describe('ModelCard', () => {
   it('should render modalities', () => {
     render(<ModelCard model={mockModel} />)
     expect(screen.getByText('Modalities')).toBeDefined()
-    expect(screen.getByText('Input:')).toBeDefined()
+    const inputLabels = screen.getAllByText('Input:')
+    expect(inputLabels.length).toBeGreaterThan(0)
     expect(screen.getByText('text, image')).toBeDefined()
-    expect(screen.getByText('Output:')).toBeDefined()
+    const outputLabels = screen.getAllByText('Output:')
+    expect(outputLabels.length).toBeGreaterThan(0)
     expect(screen.getByText('text')).toBeDefined()
   })
 
@@ -87,9 +89,11 @@ describe('ModelCard', () => {
   it('should render costs with formatted currency', () => {
     render(<ModelCard model={mockModel} />)
     expect(screen.getByText('Pricing (per million tokens)')).toBeDefined()
-    expect(screen.getByText('Input:')).toBeDefined()
+    const inputLabels = screen.getAllByText('Input:')
+    expect(inputLabels.length).toBeGreaterThan(0)
     expect(screen.getByText('$3.00')).toBeDefined()
-    expect(screen.getByText('Output:')).toBeDefined()
+    const outputLabels = screen.getAllByText('Output:')
+    expect(outputLabels.length).toBeGreaterThan(0)
     expect(screen.getByText('$15.00')).toBeDefined()
   })
 

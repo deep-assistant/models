@@ -31,8 +31,8 @@ export function parseLinoFile(content) {
       continue;
     }
 
-    // Get indentation level
-    const indent = line.search(/\S/);
+    // Get indentation level (reserved for future use)
+    // const indent = line.search(/\S/);
 
     // Released at
     if (line.trim() === 'released at') {
